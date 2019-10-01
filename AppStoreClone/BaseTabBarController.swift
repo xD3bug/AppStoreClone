@@ -15,15 +15,21 @@ class BaseTabBarController: UITabBarController {
         
         let redViewController = UIViewController()
         redViewController.view.backgroundColor = .red
-        redViewController.tabBarItem.title = "Red"
+       // redViewController.tabBarItem.title = "Red"
+        
+        let redNavController = UINavigationController(rootViewController: redViewController)
+        redNavController.tabBarItem.title = "Red Nav"
         
         let blueViewController = UIViewController()
         blueViewController.view.backgroundColor = .blue
-        blueViewController.tabBarItem.title = "Blue"
+       // blueViewController.tabBarItem.title = "Blue"
+        
+        let blueNavController = UINavigationController(rootViewController: blueViewController)
+        blueNavController.tabBarItem.title = "Blue Nav"
         
         viewControllers = [
-            redViewController,
-            blueViewController
+            redNavController,
+            blueNavController
         ]
     }
 }
