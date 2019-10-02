@@ -42,6 +42,7 @@ extension UIView {
     
     func fillSuperview(padding: UIEdgeInsets = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
+        
         if let superviewTopAnchor = superview?.topAnchor {
             topAnchor.constraint(equalTo: superviewTopAnchor, constant: padding.top).isActive = true
         }
@@ -61,6 +62,7 @@ extension UIView {
     
     func centerInSuperview(size: CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
+        
         if let superviewCenterXAnchor = superview?.centerXAnchor {
             centerXAnchor.constraint(equalTo: superviewCenterXAnchor).isActive = true
         }
@@ -80,6 +82,7 @@ extension UIView {
     
     func centerXInSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
+        
         if let superViewCenterXAnchor = superview?.centerXAnchor {
             centerXAnchor.constraint(equalTo: superViewCenterXAnchor).isActive = true
         }
@@ -87,6 +90,7 @@ extension UIView {
     
     func centerYInSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
+        
         if let centerY = superview?.centerYAnchor {
             centerYAnchor.constraint(equalTo: centerY).isActive = true
         }
@@ -94,11 +98,13 @@ extension UIView {
     
     func constrainWidth(constant: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
+        
         widthAnchor.constraint(equalToConstant: constant).isActive = true
     }
     
     func constrainHeight(constant: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
+        
         heightAnchor.constraint(equalToConstant: constant).isActive = true
     }
 }
