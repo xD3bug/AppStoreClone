@@ -58,9 +58,9 @@
 		BE09853A2344008400C45E3A /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
+				BE4570CE2344FE4C00BADC3C /* Controller */,
 				BE09853B2344008400C45E3A /* AppDelegate.swift */,
 				BE09853D2344008400C45E3A /* SceneDelegate.swift */,
-				BE09854F234408D900C45E3A /* BaseTabBarController.swift */,
 				BE09853F2344008400C45E3A /* ViewController.swift */,
 				BE0985412344008400C45E3A /* Main.storyboard */,
 				BE0985442344008700C45E3A /* Assets.xcassets */,
@@ -68,6 +68,14 @@
 				BE0985492344008700C45E3A /* Info.plist */,
 			);
 			path = AppStoreClone;
+			sourceTree = "<group>";
+		};
+		BE4570CE2344FE4C00BADC3C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE09854F234408D900C45E3A /* BaseTabBarController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
