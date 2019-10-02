@@ -15,6 +15,7 @@
 		BE0985482344008700C45E3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0985462344008700C45E3A /* LaunchScreen.storyboard */; };
 		BE098550234408D900C45E3A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE09854F234408D900C45E3A /* BaseTabBarController.swift */; };
 		BE4570D02344FEA500BADC3C /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */; };
+		BE4570D323451CAC00BADC3C /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570D223451CAC00BADC3C /* SearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BE0985492344008700C45E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE09854F234408D900C45E3A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
+		BE4570D223451CAC00BADC3C /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		BE09853A2344008400C45E3A /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
+				BE4570D123451C6B00BADC3C /* Views */,
 				BE4570CE2344FE4C00BADC3C /* Controller */,
 				BE09853B2344008400C45E3A /* AppDelegate.swift */,
 				BE09853D2344008400C45E3A /* SceneDelegate.swift */,
@@ -79,6 +82,14 @@
 				BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE4570D123451C6B00BADC3C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE4570D223451CAC00BADC3C /* SearchResultCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 				BE0985402344008400C45E3A /* ViewController.swift in Sources */,
 				BE09853C2344008400C45E3A /* AppDelegate.swift in Sources */,
 				BE4570D02344FEA500BADC3C /* AppsSearchController.swift in Sources */,
+				BE4570D323451CAC00BADC3C /* SearchResultCell.swift in Sources */,
 				BE09853E2344008400C45E3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
