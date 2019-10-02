@@ -16,6 +16,7 @@
 		BE098550234408D900C45E3A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE09854F234408D900C45E3A /* BaseTabBarController.swift */; };
 		BE4570D02344FEA500BADC3C /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */; };
 		BE4570D323451CAC00BADC3C /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570D223451CAC00BADC3C /* SearchResultCell.swift */; };
+		BE4570D82345356300BADC3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570D72345356300BADC3C /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BE09854F234408D900C45E3A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 		BE4570D223451CAC00BADC3C /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		BE4570D72345356300BADC3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		BE09853A2344008400C45E3A /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
+				BE4570D4234533BF00BADC3C /* Helpers */,
 				BE4570D123451C6B00BADC3C /* Views */,
 				BE4570CE2344FE4C00BADC3C /* Controller */,
 				BE09853B2344008400C45E3A /* AppDelegate.swift */,
@@ -90,6 +93,14 @@
 				BE4570D223451CAC00BADC3C /* SearchResultCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BE4570D4234533BF00BADC3C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BE4570D72345356300BADC3C /* UIView+Layout.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			files = (
 				BE098550234408D900C45E3A /* BaseTabBarController.swift in Sources */,
 				BE0985402344008400C45E3A /* ViewController.swift in Sources */,
+				BE4570D82345356300BADC3C /* UIView+Layout.swift in Sources */,
 				BE09853C2344008400C45E3A /* AppDelegate.swift in Sources */,
 				BE4570D02344FEA500BADC3C /* AppsSearchController.swift in Sources */,
 				BE4570D323451CAC00BADC3C /* SearchResultCell.swift in Sources */,
