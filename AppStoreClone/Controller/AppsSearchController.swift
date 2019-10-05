@@ -21,32 +21,22 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         fetchItunesApps()
     }
     
+    fileprivate var appResults = [Result]()
+    
     fileprivate func fetchItunesApps() {
         
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
-        
-        guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url) { (data, resp, err) in
-            
+        Service.shared.fetchApps { (results, err) in
             if let err = err {
-                print("Failed to fetch apps: ", err.localizedDescription)
+                print("Failed to fetch: ", err.localizedDescription)
                 return
             }
-            // Success
-            // print(String(data: data!, encoding: .utf8))
-            guard let data = data else { return }
             
-            do {
-                let searchResult =  try JSONDecoder().decode(SearchResult.self, from: data)
-                
-                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
-                
-            } catch let jsonErr {
-                print("Failed to decode JSON: ", jsonErr.localizedDescription)
+            self.appResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
-            
-            
-        }.resume()
+        }
+        
         
     }
     
@@ -61,14 +51,17 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
         
-        cell.nameLabel.text = "My app name"
+        let appResult = appResults[indexPath.item]
+        cell.nameLabel.text = appResult.trackName
+        cell.categoryLabel.text = appResult.primaryGenreName
+        cell.raitingsLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return appResults.count
     }
     
     init() {
