@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -49,14 +50,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
         
-        let appResult = appResults[indexPath.item]
-        cell.nameLabel.text = appResult.trackName
-        cell.categoryLabel.text = appResult.primaryGenreName
-        cell.raitingsLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
-//        cell.appIconImageView
-//        cell.screenShot1ImageView
-//        cell.screenShot2ImageView
-//        cell.screenShot3ImageView
+        cell.appResult = appResults[indexPath.item]
         
         return cell
     }
