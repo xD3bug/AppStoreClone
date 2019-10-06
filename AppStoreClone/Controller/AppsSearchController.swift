@@ -36,8 +36,6 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
                 self.collectionView.reloadData()
             }
         }
-        
-        
     }
     
     // Cell size
@@ -55,6 +53,10 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         cell.nameLabel.text = appResult.trackName
         cell.categoryLabel.text = appResult.primaryGenreName
         cell.raitingsLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
+//        cell.appIconImageView
+//        cell.screenShot1ImageView
+//        cell.screenShot2ImageView
+//        cell.screenShot3ImageView
         
         return cell
     }
