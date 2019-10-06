@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     private let cellId = "cellId"
     fileprivate let searchController = UISearchController(searchResultsController: nil)
@@ -20,7 +20,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         collectionView.backgroundColor = .white
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
         
-        fetchItunesApps()
+        //fetchItunesApps()
         setupSearchBar()
     }
     
@@ -31,11 +31,33 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         navigationItem.searchController = self.searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.dimsBackgroundDuringPresentation = false
+        
+        //Search notification
+        searchController.searchBar.delegate = self
+    }
+    
+    var timer: Timer?
+    
+    // Listen to search bar notofications
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
+            
+            // Run the search
+            Service.shared.fetchApps(searchTerm: searchText) { (res, err) in
+                self.appResults = res
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        })
     }
     
     fileprivate func fetchItunesApps() {
         
-        Service.shared.fetchApps { (results, err) in
+        Service.shared.fetchApps(searchTerm: "instagram") { (results, err) in
             if let err = err {
                 print("Failed to fetch: ", err.localizedDescription)
                 return
