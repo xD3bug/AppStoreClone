@@ -12,6 +12,7 @@ import SDWebImage
 class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let cellId = "cellId"
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,17 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
         
         fetchItunesApps()
+        setupSearchBar()
     }
     
     fileprivate var appResults = [Result]()
+    
+    fileprivate func setupSearchBar() {
+        definesPresentationContext = true
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.dimsBackgroundDuringPresentation = false
+    }
     
     fileprivate func fetchItunesApps() {
         
