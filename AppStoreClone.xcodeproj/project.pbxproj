@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,9 +17,12 @@
 		BE3A97872349240B0078A601 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A97862349240B0078A601 /* VerticalStackView.swift */; };
 		BE3A978A23494DAD0078A601 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A978923494DAD0078A601 /* SearchResult.swift */; };
 		BE3A978D23495E450078A601 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A978C23495E450078A601 /* Service.swift */; };
+		BE445F1C234FE96500F14FE4 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE445F1B234FE96500F14FE4 /* AppsController.swift */; };
+		BE445F1E234FEAAA00F14FE4 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE445F1D234FEAAA00F14FE4 /* BaseCollectionViewController.swift */; };
 		BE4570D02344FEA500BADC3C /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */; };
 		BE4570D323451CAC00BADC3C /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570D223451CAC00BADC3C /* SearchResultCell.swift */; };
 		BE4570D82345356300BADC3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570D72345356300BADC3C /* UIView+Layout.swift */; };
+		BEB42685234FEF8800CF74F7 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB42684234FEF8800CF74F7 /* AppsGroupCell.swift */; };
 		EE0DC69EE745F1495A55A65F /* Pods_AppStoreClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF808347E159949F7A15CF /* Pods_AppStoreClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +40,12 @@
 		BE3A97862349240B0078A601 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BE3A978923494DAD0078A601 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		BE3A978C23495E450078A601 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		BE445F1B234FE96500F14FE4 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
+		BE445F1D234FEAAA00F14FE4 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 		BE4570D223451CAC00BADC3C /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		BE4570D72345356300BADC3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		BEB42684234FEF8800CF74F7 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		C5AF808347E159949F7A15CF /* Pods_AppStoreClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B532E224CC275B39E9C1CA /* Pods-AppStoreClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreClone.release.xcconfig"; path = "Target Support Files/Pods-AppStoreClone/Pods-AppStoreClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +68,6 @@
 				189C252D9030AE5FF1EAFB4B /* Pods-AppStoreClone.debug.xcconfig */,
 				F1B532E224CC275B39E9C1CA /* Pods-AppStoreClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -119,11 +124,22 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		BE445F1A234FE93A00F14FE4 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				BE445F1B234FE96500F14FE4 /* AppsController.swift */,
+			);
+			name = Apps;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		BE4570CE2344FE4C00BADC3C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BEB60EB1234FEBFF00FF54F3 /* Search */,
+				BE445F1A234FE93A00F14FE4 /* Apps */,
 				BE09854F234408D900C45E3A /* BaseTabBarController.swift */,
-				BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */,
+				BE445F1D234FEAAA00F14FE4 /* BaseCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +147,7 @@
 		BE4570D123451C6B00BADC3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BEB42683234FEF6600CF74F7 /* Apps */,
 				BE4570D223451CAC00BADC3C /* SearchResultCell.swift */,
 			);
 			path = Views;
@@ -143,6 +160,22 @@
 				BE3A97862349240B0078A601 /* VerticalStackView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BEB42683234FEF6600CF74F7 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				BEB42684234FEF8800CF74F7 /* AppsGroupCell.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		BEB60EB1234FEBFF00FF54F3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BE4570CF2344FEA500BADC3C /* AppsSearchController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		D863981A0E8D350943CA39C2 /* Frameworks */ = {
@@ -268,10 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE445F1E234FEAAA00F14FE4 /* BaseCollectionViewController.swift in Sources */,
 				BE098550234408D900C45E3A /* BaseTabBarController.swift in Sources */,
+				BE445F1C234FE96500F14FE4 /* AppsController.swift in Sources */,
 				BE3A978A23494DAD0078A601 /* SearchResult.swift in Sources */,
 				BE0985402344008400C45E3A /* ViewController.swift in Sources */,
 				BE4570D82345356300BADC3C /* UIView+Layout.swift in Sources */,
+				BEB42685234FEF8800CF74F7 /* AppsGroupCell.swift in Sources */,
 				BE09853C2344008400C45E3A /* AppDelegate.swift in Sources */,
 				BE4570D02344FEA500BADC3C /* AppsSearchController.swift in Sources */,
 				BE3A97872349240B0078A601 /* VerticalStackView.swift in Sources */,
