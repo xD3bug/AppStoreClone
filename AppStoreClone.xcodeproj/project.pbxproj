@@ -23,6 +23,7 @@
 		BE4570D323451CAC00BADC3C /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570D223451CAC00BADC3C /* SearchResultCell.swift */; };
 		BE4570D82345356300BADC3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4570D72345356300BADC3C /* UIView+Layout.swift */; };
 		BEB42685234FEF8800CF74F7 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB42684234FEF8800CF74F7 /* AppsGroupCell.swift */; };
+		BEBD7EC72353AEA9000BF47C /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBD7EC62353AEA9000BF47C /* AppsHorizontalController.swift */; };
 		EE0DC69EE745F1495A55A65F /* Pods_AppStoreClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF808347E159949F7A15CF /* Pods_AppStoreClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		BE4570D223451CAC00BADC3C /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		BE4570D72345356300BADC3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		BEB42684234FEF8800CF74F7 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
+		BEBD7EC62353AEA9000BF47C /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
 		C5AF808347E159949F7A15CF /* Pods_AppStoreClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B532E224CC275B39E9C1CA /* Pods-AppStoreClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreClone.release.xcconfig"; path = "Target Support Files/Pods-AppStoreClone/Pods-AppStoreClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				BE445F1B234FE96500F14FE4 /* AppsController.swift */,
+				BEBD7EC62353AEA9000BF47C /* AppsHorizontalController.swift */,
 			);
 			name = Apps;
 			path = "New Group";
@@ -314,6 +317,7 @@
 				BE3A978D23495E450078A601 /* Service.swift in Sources */,
 				BE4570D323451CAC00BADC3C /* SearchResultCell.swift in Sources */,
 				BE09853E2344008400C45E3A /* SceneDelegate.swift in Sources */,
+				BEBD7EC72353AEA9000BF47C /* AppsHorizontalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
