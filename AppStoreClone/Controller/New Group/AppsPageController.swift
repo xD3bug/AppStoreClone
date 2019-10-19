@@ -21,7 +21,21 @@ class AppsPageController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Register Header
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        fetchData()
     }
+    
+    fileprivate func fetchData() {
+        print("fetching data")
+        Service.shared.fetchGames { (appGroup, err) in
+            if let err = err {
+                print("Failed to fetch ", err.localizedDescription)
+                return
+            }
+        }
+    }
+    
+    
     
     // MARK: - Header
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
