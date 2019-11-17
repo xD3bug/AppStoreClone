@@ -30,6 +30,8 @@ class AppRowCell: UICollectionViewCell {
         getButton.layer.cornerRadius = 32 / 2
         getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         
+        nameLabel.numberOfLines = 2
+        
         // Horizontal stackView
         let stackView = UIStackView(arrangedSubviews: [imageView, VerticalStackView(arrangedSubviews: [nameLabel, companyLabel], spacing: 4), getButton])
         stackView.spacing = 16
