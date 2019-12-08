@@ -154,6 +154,7 @@ class AppsPageController: UICollectionViewController, UICollectionViewDelegateFl
         
         cell.horizontalController.didSelectHandler = { [weak self] feedResult in
             let controller = AppDetailController()
+            controller.appId = feedResult.id
             controller.navigationItem.title = feedResult.name
             self?.navigationController?.pushViewController(controller, animated: true)
         }
