@@ -14,6 +14,8 @@ class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDe
     
     var appGroup: AppGroup?
     
+    var didSelectHandler: ((FeedResult) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,13 @@ class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDe
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let app = appGroup?.feed.results[indexPath.item] {
+            didSelectHandler?(app)
         }
     }
     
