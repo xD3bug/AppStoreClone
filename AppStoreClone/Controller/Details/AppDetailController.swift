@@ -27,10 +27,30 @@ class AppDetailController: BaseCollectionViewController, UICollectionViewDelegat
                     self.collectionView.reloadData()
                 }
             }
+            
+            let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/id=\(appId ?? "")/sortBy=mostRecent/json"
+            
+            Service.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, err) in
+                
+                if let err = err {
+                    print("failed to decode reviews: ", err.localizedDescription)
+                    return
+                }
+                
+                self.reviews = reviews
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                reviews?.feed.entry.forEach({ print($0.rating.label)})
+//                reviews?.feed.entry.forEach({ (entry) in
+//                    print(entry.title.label, entry.author.name.label, entry.content.label)
+//                })
+            }
         }
     }
     
     var app: Result?
+    var reviews: Reviews?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +80,7 @@ class AppDetailController: BaseCollectionViewController, UICollectionViewDelegat
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewCellId, for: indexPath) as! ReviewRowCell
+            cell.reviewsController.reviews = self.reviews
             return cell
         }
         
@@ -88,5 +109,9 @@ class AppDetailController: BaseCollectionViewController, UICollectionViewDelegat
             height = 280
         }
         return .init(width: view.frame.width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 0, left: 0, bottom: 16, right: 0)
     }
 }
