@@ -12,7 +12,6 @@ class TodayController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 
