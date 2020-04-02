@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TodayController.swift
 //  AppStoreClone
 //
 //  Created by Аслан on 02/10/2019.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TodayController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
+        
     }
-
-
 }
 

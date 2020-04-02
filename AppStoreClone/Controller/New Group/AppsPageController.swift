@@ -21,7 +21,7 @@ class AppsPageController: UICollectionViewController, UICollectionViewDelegateFl
         return aiv
     }()
     
-    // Array to hold All Aps Group
+    // Array to hold all Aps Group
     var groups = [AppGroup]()
     var socialApps = [SocialApp]()
     
@@ -100,7 +100,7 @@ class AppsPageController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Dispatch Group Completion
         dispatchGroup.notify(queue: .main) {
-            print("Completed your dispatch group tasks...")
+            print("Dispatch group tasks completed...")
             self.activityIndicatorView.stopAnimating()
             
             if let group = group1 {
@@ -146,10 +146,8 @@ class AppsPageController: UICollectionViewController, UICollectionViewDelegateFl
         let appGroup = groups[indexPath.item]
         cell.titleLabel.text = appGroup.feed.title
         
-        // Горизонтально крутящаяся коллекция со списком приложений
         cell.horizontalController.appGroup = appGroup
         
-        // Иначе ячейки не отобразятся
         cell.horizontalController.collectionView.reloadData()
         
         cell.horizontalController.didSelectHandler = { [weak self] feedResult in

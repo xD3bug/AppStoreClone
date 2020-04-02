@@ -18,7 +18,7 @@ class PreviewScreenShotsController: BaseCollectionViewController, UICollectionVi
         }
     }
     
-    // Create Cell Inline
+    // Inline Cell
     class ScreenshotCell: UICollectionViewCell {
         
         let imageView = UIImageView(cornerRadius: 12)
