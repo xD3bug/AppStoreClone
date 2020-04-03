@@ -131,7 +131,6 @@
 				BE4570CE2344FE4C00BADC3C /* Controller */,
 				BE09853B2344008400C45E3A /* AppDelegate.swift */,
 				BE09853D2344008400C45E3A /* SceneDelegate.swift */,
-				BE09853F2344008400C45E3A /* TodayController.swift */,
 				BE0985412344008400C45E3A /* Main.storyboard */,
 				BE0985442344008700C45E3A /* Assets.xcassets */,
 				BE0985462344008700C45E3A /* LaunchScreen.storyboard */,
@@ -173,6 +172,7 @@
 		BE4570CE2344FE4C00BADC3C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BE505A5024376C9F00F19A50 /* Today */,
 				BEC4713B239D702E00BC4CB3 /* Details */,
 				BEB60EB1234FEBFF00FF54F3 /* Search */,
 				BE445F1A234FE93A00F14FE4 /* Apps */,
@@ -200,6 +200,14 @@
 				BEBD7ECA2353BA6D000BF47C /* Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BE505A5024376C9F00F19A50 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				BE09853F2344008400C45E3A /* TodayController.swift */,
+			);
+			path = Today;
 			sourceTree = "<group>";
 		};
 		BE785F8D239D78DE0073B552 /* Details */ = {

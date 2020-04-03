@@ -63,7 +63,7 @@ class SearchResultCell: UICollectionViewCell {
         button.setTitle("GET", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.backgroundColor = .darkGray
+        button.backgroundColor = #colorLiteral(red: 0.9724567533, green: 0.9726156592, blue: 0.9724228978, alpha: 1)
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
         button.heightAnchor.constraint(equalToConstant: 32).isActive = true
         button.layer.cornerRadius = 16
@@ -87,8 +87,6 @@ class SearchResultCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        
-        //backgroundColor = .yellow
         
         // Horizontal StackView
         let infoTopStackView = UIStackView(arrangedSubviews: [
