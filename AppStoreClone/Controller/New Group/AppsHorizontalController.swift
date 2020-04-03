@@ -14,6 +14,7 @@ class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDe
     
     var appGroup: AppGroup?
     
+    // Clouser used inside AppsPageController
     var didSelectHandler: ((FeedResult) -> ())?
     
     override func viewDidLoad() {

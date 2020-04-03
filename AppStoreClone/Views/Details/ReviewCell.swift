@@ -18,6 +18,7 @@ class ReviewCell: UICollectionViewCell {
     
     let starsStackView: UIStackView = {
         var arrangedSubviews = [UIView]()
+        
         (0..<5).forEach { (_) in
             let imageView = UIImageView(image: #imageLiteral(resourceName: "star"))
             imageView.constrainWidth(constant: 24)
@@ -25,11 +26,12 @@ class ReviewCell: UICollectionViewCell {
             arrangedSubviews.append(imageView)
         }
         arrangedSubviews.append(UIView())
+        
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         return stackView
     }()
     
-    let bodyLabel = UILabel(text: "Body text\nBody text\nBody text\nBody text\nBody text\n", font: .systemFont(ofSize: 18), numberOfLines: 5)
+    let bodyLabel = UILabel(text: "Body label text", font: .systemFont(ofSize: 18), numberOfLines: 5)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

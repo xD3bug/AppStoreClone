@@ -47,6 +47,10 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
             
             // Run the search
             Service.shared.fetchApps(searchTerm: searchText) { (res, err) in
+                if let err = err {
+                    print("failed to fire search: ", err.localizedDescription)
+                    return
+                }
                 self.appResults = res?.results ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()

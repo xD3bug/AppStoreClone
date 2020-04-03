@@ -39,6 +39,7 @@ class ReviewsController: BaseCollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ReviewCell
+        
         let entry = self.reviews?.feed.entry[indexPath.item]
         cell.titleLabel.text = entry?.title.label
         cell.authorLabel.text = entry?.author.name.label

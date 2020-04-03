@@ -26,7 +26,7 @@ class PreviewScreenShotsController: BaseCollectionViewController, UICollectionVi
         override init(frame: CGRect) {
             super.init(frame: frame)
             
-            imageView.backgroundColor = .purple
+            imageView.backgroundColor = .lightGray
             addSubview(imageView)
             imageView.fillSuperview()
         }
