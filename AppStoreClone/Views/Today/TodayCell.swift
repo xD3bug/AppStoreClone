@@ -11,7 +11,7 @@ import UIKit
 class TodayCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "moscow"))
+        let iv = UIImageView(image: #imageLiteral(resourceName: "assasin"))
         iv.contentMode = .scaleToFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv

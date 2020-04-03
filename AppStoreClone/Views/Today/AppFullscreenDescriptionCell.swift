@@ -12,7 +12,7 @@ class AppFullscreenDescriptionCell: UITableViewCell {
     
     lazy var descLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = makeText(firstPart: "Moscow", secondPart: "is the capital and most populous city of Russia. With over 12.5 million residents living within the city limits of 2,511 square kilometres (970 sq mi) as of 2018, Moscow is among the world's largest cities, being the largest city in Europe, and the largest city (by area) on the European continent")
+        label.attributedText = makeText(firstPart: "Assassin’s Creed Rebellion", secondPart: " is the official mobile Strategy-RPG of the Assassin's Creed universe.\n\nExclusively developed for mobile, a new version of the Animus allows us to experience memories from the past and play with different Assassins simultaneously. Gather powerful Assassins in a single Brotherhood and unite against the Templars and the opression raging in Spain.")
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
