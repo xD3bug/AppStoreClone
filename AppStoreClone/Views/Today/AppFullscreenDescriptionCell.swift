@@ -10,6 +10,13 @@ import UIKit
 
 class AppFullscreenDescriptionCell: UITableViewCell {
     
+    var fullDesc: TodayItem? {
+        didSet {
+            guard let fullDesc = fullDesc else { return }
+            descLabel.attributedText = makeText(firstPart: fullDesc.title, secondPart: fullDesc.fullDescription)
+        }
+    }
+    
     lazy var descLabel: UILabel = {
         let label = UILabel()
         label.attributedText = makeText(firstPart: "Assassin’s Creed Rebellion", secondPart: " is the official mobile Strategy-RPG of the Assassin's Creed universe.\n\nExclusively developed for mobile, a new version of the Animus allows us to experience memories from the past and play with different Assassins simultaneously. Gather powerful Assassins in a single Brotherhood and unite against the Templars and the opression raging in Spain.")

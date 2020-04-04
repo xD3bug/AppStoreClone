@@ -14,6 +14,8 @@
 		BE0985452344008700C45E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0985442344008700C45E3A /* Assets.xcassets */; };
 		BE0985482344008700C45E3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0985462344008700C45E3A /* LaunchScreen.storyboard */; };
 		BE098550234408D900C45E3A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE09854F234408D900C45E3A /* BaseTabBarController.swift */; };
+		BE12B1BC2438E6380058AC69 /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE12B1BB2438E6380058AC69 /* AppFullscreenHeaderCell.swift */; };
+		BE12B1BE24391E8A0058AC69 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE12B1BD24391E8A0058AC69 /* TodayItem.swift */; };
 		BE1FD138239D98C80036C239 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD137239D98C80036C239 /* PreviewCell.swift */; };
 		BE1FD13A239D9B3E0036C239 /* PreviewScreenShotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD139239D9B3D0036C239 /* PreviewScreenShotsController.swift */; };
 		BE1FD13C239DA3910036C239 /* ReviewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD13B239DA3910036C239 /* ReviewRowCell.swift */; };
@@ -56,6 +58,8 @@
 		BE0985472344008700C45E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE0985492344008700C45E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE09854F234408D900C45E3A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		BE12B1BB2438E6380058AC69 /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
+		BE12B1BD24391E8A0058AC69 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		BE1FD137239D98C80036C239 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		BE1FD139239D9B3D0036C239 /* PreviewScreenShotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenShotsController.swift; sourceTree = "<group>"; };
 		BE1FD13B239DA3910036C239 /* ReviewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowCell.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				BEB763C123A6551C00154776 /* Reviews.swift */,
 				BE4E934D23550A3500D6715B /* AppGroup.swift */,
 				BEB7E6E02381C2DD000468AB /* SocialApp.swift */,
+				BE12B1BD24391E8A0058AC69 /* TodayItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			children = (
 				BE505A52243775D700F19A50 /* TodayCell.swift */,
 				BE505A5624378B1600F19A50 /* AppFullscreenDescriptionCell.swift */,
+				BE12B1BB2438E6380058AC69 /* AppFullscreenHeaderCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				BEB7E6E12381C2DD000468AB /* SocialApp.swift in Sources */,
 				BE098550234408D900C45E3A /* BaseTabBarController.swift in Sources */,
 				BE445F1C234FE96500F14FE4 /* AppsPageController.swift in Sources */,
+				BE12B1BE24391E8A0058AC69 /* TodayItem.swift in Sources */,
 				BE3A978A23494DAD0078A601 /* SearchResult.swift in Sources */,
 				BE0985402344008400C45E3A /* TodayController.swift in Sources */,
 				BE1FD138239D98C80036C239 /* PreviewCell.swift in Sources */,
@@ -418,6 +425,7 @@
 				BE785F8F239D79000073B552 /* AppDetailCell.swift in Sources */,
 				BE1FD13A239D9B3E0036C239 /* PreviewScreenShotsController.swift in Sources */,
 				BEB763C223A6551C00154776 /* Reviews.swift in Sources */,
+				BE12B1BC2438E6380058AC69 /* AppFullscreenHeaderCell.swift in Sources */,
 				BEBD7EC72353AEA9000BF47C /* AppsHorizontalController.swift in Sources */,
 				BE1FD13C239DA3910036C239 /* ReviewRowCell.swift in Sources */,
 				BE505A552437870500F19A50 /* AppFullscreenController.swift in Sources */,
