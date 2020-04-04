@@ -13,6 +13,11 @@ class TodayController: BaseCollectionViewController, UICollectionViewDelegateFlo
 
     let todayCellId = "todayCellId"
     
+    let items = [
+        TodayItem.init(title: "Assassin’s Creed Rebellion", subtitle: "An Heroic Adventure RPG Game", description: "Play Mobile Animus's new Helix Rift Event. Travel to the Caribbean on a search for Spanish gold during the golden age of piracy.", fullDescription: " is the official mobile Strategy-RPG of the Assassin's Creed universe.\n\nExclusively developed for mobile, a new version of the Animus allows us to experience memories from the past and play with different Assassins simultaneously. Gather powerful Assassins in a single Brotherhood and unite against the Templars and the opression raging in Spain.", imageName: "assasin"),
+        TodayItem.init(title: "Subway Surfers", subtitle: "Join the endless running fun!", description: "Help Jake, Tricky & Fresh escape from the grumpy Inspector and his dog.", fullDescription: "World Tour goes to beautiful Iceland\n- Surf through chilling ice caves and scorching volcanoes\n- Boost your Surfer crew with Bjarki, the strong explorer\n- Unlock Bjarki’s Fisher Outfit and surf the splashing Big Blue board\n- Collect hidden Easter eggs on the decorated tracks to earn prizes", imageName: "subway")
+    ]
+    
     var startingFrame: CGRect?
     var appFullScreenController: AppFullscreenController?
     
@@ -29,11 +34,11 @@ class TodayController: BaseCollectionViewController, UICollectionViewDelegateFlo
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: todayCellId)
     }
     
-    @objc func handleRedViewRemove(gesture: UITapGestureRecognizer) {
+    @objc func handleViewRemove() {
 
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             
-            self.appFullScreenController?.tableView.scrollRectToVisible(.zero, animated: true)
+            self.appFullScreenController?.tableView.contentOffset = .zero
             
             guard let startingFrame = self.startingFrame else { return }
             
@@ -45,9 +50,8 @@ class TodayController: BaseCollectionViewController, UICollectionViewDelegateFlo
             
             self.tabBarController?.tabBar.isHidden = false
         }, completion: { _ in
-            gesture.view?.removeFromSuperview()
-            
             guard let appFullScreenController = self.appFullScreenController else { return }
+            appFullScreenController.view.removeFromSuperview()
             appFullScreenController.removeFromParent()
         })
     }
@@ -56,11 +60,15 @@ class TodayController: BaseCollectionViewController, UICollectionViewDelegateFlo
         
         // Save reference to controller to remove it later
         let appFullScreenController = AppFullscreenController()
+        appFullScreenController.todayItem = items[indexPath.item]
         
-        guard let appFullscreenControllerView = appFullScreenController.view else { return }
-        appFullscreenControllerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRedViewRemove)))
+        appFullScreenController.dismissHandler = {
+            self.handleViewRemove()
+        }
         
-        collectionView.addSubview(appFullscreenControllerView)
+        guard let fullscreenView = appFullScreenController.view else { return }
+        
+        collectionView.addSubview(fullscreenView)
         
         addChild(appFullScreenController)
         self.appFullScreenController = appFullScreenController
@@ -74,17 +82,17 @@ class TodayController: BaseCollectionViewController, UICollectionViewDelegateFlo
         self.startingFrame = startingFrame
        
         // Auto layout constraint animation
-        appFullscreenControllerView.translatesAutoresizingMaskIntoConstraints = false
-        topConstraint = appFullscreenControllerView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
-        leadingConstraint = appFullscreenControllerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
-        widthConstraint = appFullscreenControllerView.widthAnchor.constraint(equalToConstant: startingFrame.width)
-        heightConstraint = appFullscreenControllerView.heightAnchor.constraint(equalToConstant: startingFrame.height)
+        fullscreenView.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = fullscreenView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
+        leadingConstraint = fullscreenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
+        widthConstraint = fullscreenView.widthAnchor.constraint(equalToConstant: startingFrame.width)
+        heightConstraint = fullscreenView.heightAnchor.constraint(equalToConstant: startingFrame.height)
         
         [topConstraint, leadingConstraint, widthConstraint, heightConstraint].forEach({$0?.isActive = true})
         self.view.layoutIfNeeded()
         
-        appFullscreenControllerView.layer.cornerRadius = 16
-        appFullscreenControllerView.clipsToBounds = true
+        fullscreenView.layer.cornerRadius = 16
+        fullscreenView.clipsToBounds = true
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             
@@ -99,16 +107,17 @@ class TodayController: BaseCollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return items.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: todayCellId, for: indexPath) as! TodayCell
+        cell.todayItem = items[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 44, height: 400)
+        return .init(width: view.frame.width - 44, height: 450)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
